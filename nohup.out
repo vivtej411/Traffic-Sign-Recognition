@@ -1,0 +1,244 @@
+[NbConvertApp] Converting notebook CNN-SimpleLayered-Belgium.ipynb to notebook
+[NbConvertApp] Executing notebook with kernel: python3
+2024-01-17 15:44:20.304512: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: $/var/lib/docker/overlay2/18478643efb701f8f9328b366f3a90e0c665abd53b5648d82e2f2485dad3916c/merged/usr/local/cuda-11.4/targets/x86_64-linux/lib/libcudart.so.11.0
+2024-01-17 15:44:20.304557: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+Traceback (most recent call last):
+  File "/raid/home/dgx1442/finalYearProject/venv/bin/jupyter-nbconvert", line 8, in <module>
+    sys.exit(main())
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/jupyter_core/application.py", line 264, in launch_instance
+    return super(JupyterApp, cls).launch_instance(argv=argv, **kwargs)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/traitlets/config/application.py", line 664, in launch_instance
+    app.start()
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/nbconvertapp.py", line 350, in start
+    self.convert_notebooks()
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/nbconvertapp.py", line 524, in convert_notebooks
+    self.convert_single_notebook(notebook_filename)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/nbconvertapp.py", line 489, in convert_single_notebook
+    output, resources = self.export_single_notebook(notebook_filename, resources, input_buffer=input_buffer)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/nbconvertapp.py", line 418, in export_single_notebook
+    output, resources = self.exporter.from_filename(notebook_filename, resources=resources)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/exporters/exporter.py", line 181, in from_filename
+    return self.from_file(f, resources=resources, **kw)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/exporters/exporter.py", line 199, in from_file
+    return self.from_notebook_node(nbformat.read(file_stream, as_version=4), resources=resources, **kw)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/exporters/notebook.py", line 32, in from_notebook_node
+    nb_copy, resources = super().from_notebook_node(nb, resources, **kw)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/exporters/exporter.py", line 143, in from_notebook_node
+    nb_copy, resources = self._preprocess(nb_copy, resources)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/exporters/exporter.py", line 318, in _preprocess
+    nbc, resc = preprocessor(nbc, resc)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/preprocessors/base.py", line 47, in __call__
+    return self.preprocess(nb, resources)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/preprocessors/execute.py", line 79, in preprocess
+    self.execute()
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/lib/python3.6/asyncio/base_events.py", line 484, in run_until_complete
+    return future.result()
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbclient/client.py", line 560, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/preprocessors/execute.py", line 123, in async_execute_cell
+    cell, resources = self.preprocess_cell(cell, self.resources, cell_index)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/preprocessors/execute.py", line 146, in preprocess_cell
+    cell = run_sync(NotebookClient.async_execute_cell)(self, cell, index, store_history=self.store_history)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nest_asyncio.py", line 99, in run_until_complete
+    return f.result()
+  File "/usr/lib/python3.6/asyncio/tasks.py", line 180, in _step
+    result = coro.send(None)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbclient/client.py", line 854, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbclient/client.py", line 756, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+df=[[]]
+df=pd.DataFrame(df)
+for i in trainclasses:
+    path = "./Belgium Datasets/BelgiumTSC_Training/Training/"+i+"/GT-"+i+".csv"
+    df1 = pd.read_csv(path,sep=';')
+    df1['Filename']="./Belgium Datasets/BelgiumTSC_Training/Training/"+i+'/'+df1["Filename"]
+    df=pd.concat([df,df1],ignore_index=True)
+
+df['Rotate']=0
+df.head()
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNotADirectoryError[0m                        Traceback (most recent call last)
+[0;32m<ipython-input-1-1d70554e3887>[0m in [0;36m<module>[0;34m[0m
+[1;32m      3[0m [0;32mfor[0m [0mi[0m [0;32min[0m [0mtrainclasses[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m     [0mpath[0m [0;34m=[0m [0;34m"./Belgium Datasets/BelgiumTSC_Training/Training/"[0m[0;34m+[0m[0mi[0m[0;34m+[0m[0;34m"/GT-"[0m[0;34m+[0m[0mi[0m[0;34m+[0m[0;34m".csv"[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 5[0;31m     [0mdf1[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0mpath[0m[0;34m,[0m[0msep[0m[0;34m=[0m[0;34m';'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      6[0m     [0mdf1[0m[0;34m[[0m[0;34m'Filename'[0m[0;34m][0m[0;34m=[0m[0;34m"./Belgium Datasets/BelgiumTSC_Training/Training/"[0m[0;34m+[0m[0mi[0m[0;34m+[0m[0;34m'/'[0m[0;34m+[0m[0mdf1[0m[0;34m[[0m[0;34m"Filename"[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[1;32m      7[0m     [0mdf[0m[0;34m=[0m[0mpd[0m[0;34m.[0m[0mconcat[0m[0;34m([0m[0;34m[[0m[0mdf[0m[0;34m,[0m[0mdf1[0m[0;34m][0m[0;34m,[0m[0mignore_index[0m[0;34m=[0m[0;32mTrue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/finalYearProject/venv/lib/python3.6/site-packages/pandas/io/parsers.py[0m in [0;36mread_csv[0;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)[0m
+[1;32m    686[0m     )
+[1;32m    687[0m [0;34m[0m[0m
+[0;32m--> 688[0;31m     [0;32mreturn[0m [0m_read[0m[0;34m([0m[0mfilepath_or_buffer[0m[0;34m,[0m [0mkwds[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    689[0m [0;34m[0m[0m
+[1;32m    690[0m [0;34m[0m[0m
+
+[0;32m~/finalYearProject/venv/lib/python3.6/site-packages/pandas/io/parsers.py[0m in [0;36m_read[0;34m(filepath_or_buffer, kwds)[0m
+[1;32m    452[0m [0;34m[0m[0m
+[1;32m    453[0m     [0;31m# Create the parser.[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 454[0;31m     [0mparser[0m [0;34m=[0m [0mTextFileReader[0m[0;34m([0m[0mfp_or_buf[0m[0;34m,[0m [0;34m**[0m[0mkwds[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    455[0m [0;34m[0m[0m
+[1;32m    456[0m     [0;32mif[0m [0mchunksize[0m [0;32mor[0m [0miterator[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/finalYearProject/venv/lib/python3.6/site-packages/pandas/io/parsers.py[0m in [0;36m__init__[0;34m(self, f, engine, **kwds)[0m
+[1;32m    946[0m             [0mself[0m[0;34m.[0m[0moptions[0m[0;34m[[0m[0;34m"has_index_names"[0m[0;34m][0m [0;34m=[0m [0mkwds[0m[0;34m[[0m[0;34m"has_index_names"[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[1;32m    947[0m [0;34m[0m[0m
+[0;32m--> 948[0;31m         [0mself[0m[0;34m.[0m[0m_make_engine[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mengine[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    949[0m [0;34m[0m[0m
+[1;32m    950[0m     [0;32mdef[0m [0mclose[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/finalYearProject/venv/lib/python3.6/site-packages/pandas/io/parsers.py[0m in [0;36m_make_engine[0;34m(self, engine)[0m
+[1;32m   1178[0m     [0;32mdef[0m [0m_make_engine[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mengine[0m[0;34m=[0m[0;34m"c"[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1179[0m         [0;32mif[0m [0mengine[0m [0;34m==[0m [0;34m"c"[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1180[0;31m             [0mself[0m[0;34m.[0m[0m_engine[0m [0;34m=[0m [0mCParserWrapper[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mf[0m[0;34m,[0m [0;34m**[0m[0mself[0m[0;34m.[0m[0moptions[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1181[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1182[0m             [0;32mif[0m [0mengine[0m [0;34m==[0m [0;34m"python"[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/finalYearProject/venv/lib/python3.6/site-packages/pandas/io/parsers.py[0m in [0;36m__init__[0;34m(self, src, **kwds)[0m
+[1;32m   2008[0m         [0mkwds[0m[0;34m[[0m[0;34m"usecols"[0m[0;34m][0m [0;34m=[0m [0mself[0m[0;34m.[0m[0musecols[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   2009[0m [0;34m[0m[0m
+[0;32m-> 2010[0;31m         [0mself[0m[0;34m.[0m[0m_reader[0m [0;34m=[0m [0mparsers[0m[0;34m.[0m[0mTextReader[0m[0;34m([0m[0msrc[0m[0;34m,[0m [0;34m**[0m[0mkwds[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   2011[0m         [0mself[0m[0;34m.[0m[0munnamed_cols[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_reader[0m[0;34m.[0m[0munnamed_cols[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   2012[0m [0;34m[0m[0m
+
+[0;32mpandas/_libs/parsers.pyx[0m in [0;36mpandas._libs.parsers.TextReader.__cinit__[0;34m()[0m
+
+[0;32mpandas/_libs/parsers.pyx[0m in [0;36mpandas._libs.parsers.TextReader._setup_parser_source[0;34m()[0m
+
+[0;31mNotADirectoryError[0m: [Errno 20] Not a directory: './Belgium Datasets/BelgiumTSC_Training/Training/Readme.txt/GT-Readme.txt.csv'
+NotADirectoryError: [Errno 20] Not a directory: './Belgium Datasets/BelgiumTSC_Training/Training/Readme.txt/GT-Readme.txt.csv'
+
+[NbConvertApp] Converting notebook CNN-SimpleLayered-Belgium.ipynb to notebook
+[NbConvertApp] Executing notebook with kernel: python3
+2024-01-17 15:50:26.753106: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: $/var/lib/docker/overlay2/18478643efb701f8f9328b366f3a90e0c665abd53b5648d82e2f2485dad3916c/merged/usr/local/cuda-11.4/targets/x86_64-linux/lib/libcudart.so.11.0
+2024-01-17 15:50:26.753177: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+Traceback (most recent call last):
+  File "/raid/home/dgx1442/finalYearProject/venv/bin/jupyter-nbconvert", line 8, in <module>
+    sys.exit(main())
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/jupyter_core/application.py", line 264, in launch_instance
+    return super(JupyterApp, cls).launch_instance(argv=argv, **kwargs)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/traitlets/config/application.py", line 664, in launch_instance
+    app.start()
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/nbconvertapp.py", line 350, in start
+    self.convert_notebooks()
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/nbconvertapp.py", line 524, in convert_notebooks
+    self.convert_single_notebook(notebook_filename)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/nbconvertapp.py", line 489, in convert_single_notebook
+    output, resources = self.export_single_notebook(notebook_filename, resources, input_buffer=input_buffer)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/nbconvertapp.py", line 418, in export_single_notebook
+    output, resources = self.exporter.from_filename(notebook_filename, resources=resources)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/exporters/exporter.py", line 181, in from_filename
+    return self.from_file(f, resources=resources, **kw)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/exporters/exporter.py", line 199, in from_file
+    return self.from_notebook_node(nbformat.read(file_stream, as_version=4), resources=resources, **kw)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/exporters/notebook.py", line 32, in from_notebook_node
+    nb_copy, resources = super().from_notebook_node(nb, resources, **kw)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/exporters/exporter.py", line 143, in from_notebook_node
+    nb_copy, resources = self._preprocess(nb_copy, resources)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/exporters/exporter.py", line 318, in _preprocess
+    nbc, resc = preprocessor(nbc, resc)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/preprocessors/base.py", line 47, in __call__
+    return self.preprocess(nb, resources)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/preprocessors/execute.py", line 79, in preprocess
+    self.execute()
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/lib/python3.6/asyncio/base_events.py", line 484, in run_until_complete
+    return future.result()
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbclient/client.py", line 560, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/preprocessors/execute.py", line 123, in async_execute_cell
+    cell, resources = self.preprocess_cell(cell, self.resources, cell_index)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbconvert/preprocessors/execute.py", line 146, in preprocess_cell
+    cell = run_sync(NotebookClient.async_execute_cell)(self, cell, index, store_history=self.store_history)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nest_asyncio.py", line 99, in run_until_complete
+    return f.result()
+  File "/usr/lib/python3.6/asyncio/tasks.py", line 180, in _step
+    result = coro.send(None)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbclient/client.py", line 854, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/raid/home/dgx1442/finalYearProject/venv/lib/python3.6/site-packages/nbclient/client.py", line 756, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+df=[[]]
+df=pd.DataFrame(df)
+for i in trainclasses:
+    path = "./Belgium Datasets/BelgiumTSC_Training/Training/"+i+"/GT-"+i+".csv"
+    df1 = pd.read_csv(path,sep=';')
+    df1['Filename']="./Belgium Datasets/BelgiumTSC_Training/Training/"+i+'/'+df1["Filename"]
+    df=pd.concat([df,df1],ignore_index=True)
+
+df['Rotate']=0
+df.head()
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNotADirectoryError[0m                        Traceback (most recent call last)
+[0;32m<ipython-input-1-1d70554e3887>[0m in [0;36m<module>[0;34m[0m
+[1;32m      3[0m [0;32mfor[0m [0mi[0m [0;32min[0m [0mtrainclasses[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m     [0mpath[0m [0;34m=[0m [0;34m"./Belgium Datasets/BelgiumTSC_Training/Training/"[0m[0;34m+[0m[0mi[0m[0;34m+[0m[0;34m"/GT-"[0m[0;34m+[0m[0mi[0m[0;34m+[0m[0;34m".csv"[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 5[0;31m     [0mdf1[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0mpath[0m[0;34m,[0m[0msep[0m[0;34m=[0m[0;34m';'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      6[0m     [0mdf1[0m[0;34m[[0m[0;34m'Filename'[0m[0;34m][0m[0;34m=[0m[0;34m"./Belgium Datasets/BelgiumTSC_Training/Training/"[0m[0;34m+[0m[0mi[0m[0;34m+[0m[0;34m'/'[0m[0;34m+[0m[0mdf1[0m[0;34m[[0m[0;34m"Filename"[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[1;32m      7[0m     [0mdf[0m[0;34m=[0m[0mpd[0m[0;34m.[0m[0mconcat[0m[0;34m([0m[0;34m[[0m[0mdf[0m[0;34m,[0m[0mdf1[0m[0;34m][0m[0;34m,[0m[0mignore_index[0m[0;34m=[0m[0;32mTrue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/finalYearProject/venv/lib/python3.6/site-packages/pandas/io/parsers.py[0m in [0;36mread_csv[0;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)[0m
+[1;32m    686[0m     )
+[1;32m    687[0m [0;34m[0m[0m
+[0;32m--> 688[0;31m     [0;32mreturn[0m [0m_read[0m[0;34m([0m[0mfilepath_or_buffer[0m[0;34m,[0m [0mkwds[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    689[0m [0;34m[0m[0m
+[1;32m    690[0m [0;34m[0m[0m
+
+[0;32m~/finalYearProject/venv/lib/python3.6/site-packages/pandas/io/parsers.py[0m in [0;36m_read[0;34m(filepath_or_buffer, kwds)[0m
+[1;32m    452[0m [0;34m[0m[0m
+[1;32m    453[0m     [0;31m# Create the parser.[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 454[0;31m     [0mparser[0m [0;34m=[0m [0mTextFileReader[0m[0;34m([0m[0mfp_or_buf[0m[0;34m,[0m [0;34m**[0m[0mkwds[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    455[0m [0;34m[0m[0m
+[1;32m    456[0m     [0;32mif[0m [0mchunksize[0m [0;32mor[0m [0miterator[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/finalYearProject/venv/lib/python3.6/site-packages/pandas/io/parsers.py[0m in [0;36m__init__[0;34m(self, f, engine, **kwds)[0m
+[1;32m    946[0m             [0mself[0m[0;34m.[0m[0moptions[0m[0;34m[[0m[0;34m"has_index_names"[0m[0;34m][0m [0;34m=[0m [0mkwds[0m[0;34m[[0m[0;34m"has_index_names"[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[1;32m    947[0m [0;34m[0m[0m
+[0;32m--> 948[0;31m         [0mself[0m[0;34m.[0m[0m_make_engine[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mengine[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    949[0m [0;34m[0m[0m
+[1;32m    950[0m     [0;32mdef[0m [0mclose[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/finalYearProject/venv/lib/python3.6/site-packages/pandas/io/parsers.py[0m in [0;36m_make_engine[0;34m(self, engine)[0m
+[1;32m   1178[0m     [0;32mdef[0m [0m_make_engine[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mengine[0m[0;34m=[0m[0;34m"c"[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1179[0m         [0;32mif[0m [0mengine[0m [0;34m==[0m [0;34m"c"[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1180[0;31m             [0mself[0m[0;34m.[0m[0m_engine[0m [0;34m=[0m [0mCParserWrapper[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mf[0m[0;34m,[0m [0;34m**[0m[0mself[0m[0;34m.[0m[0moptions[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1181[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1182[0m             [0;32mif[0m [0mengine[0m [0;34m==[0m [0;34m"python"[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/finalYearProject/venv/lib/python3.6/site-packages/pandas/io/parsers.py[0m in [0;36m__init__[0;34m(self, src, **kwds)[0m
+[1;32m   2008[0m         [0mkwds[0m[0;34m[[0m[0;34m"usecols"[0m[0;34m][0m [0;34m=[0m [0mself[0m[0;34m.[0m[0musecols[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   2009[0m [0;34m[0m[0m
+[0;32m-> 2010[0;31m         [0mself[0m[0;34m.[0m[0m_reader[0m [0;34m=[0m [0mparsers[0m[0;34m.[0m[0mTextReader[0m[0;34m([0m[0msrc[0m[0;34m,[0m [0;34m**[0m[0mkwds[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   2011[0m         [0mself[0m[0;34m.[0m[0munnamed_cols[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_reader[0m[0;34m.[0m[0munnamed_cols[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   2012[0m [0;34m[0m[0m
+
+[0;32mpandas/_libs/parsers.pyx[0m in [0;36mpandas._libs.parsers.TextReader.__cinit__[0;34m()[0m
+
+[0;32mpandas/_libs/parsers.pyx[0m in [0;36mpandas._libs.parsers.TextReader._setup_parser_source[0;34m()[0m
+
+[0;31mNotADirectoryError[0m: [Errno 20] Not a directory: './Belgium Datasets/BelgiumTSC_Training/Training/Readme.txt/GT-Readme.txt.csv'
+NotADirectoryError: [Errno 20] Not a directory: './Belgium Datasets/BelgiumTSC_Training/Training/Readme.txt/GT-Readme.txt.csv'
+
